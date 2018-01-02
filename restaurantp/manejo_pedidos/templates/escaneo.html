@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo - {% block titulo %}{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css'}">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+   
+    
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+
+          <h1 id="project_title">HTML5 QR code Reader</h1>
+
+          <h3 class="center">{{restaurante}}</h3>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner center">
+
+            <div class="center" id="reader" style="width:300px;height:250px;"><video id="html5_qrcode_video" width="300px" height="250px"></video><canvas id="qr-canvas" width="298px" height="248px" style="display:none;"></canvas></div>
+
+            <h6 class="center">Result</h6>
+            <span id="read" class="center"></span>
+            <br>
+
+            <h6 class="center">Read Error:</h6>
+            <span id="read_error" class="center"></span>
+            <br>
+            <h6 class="center">Video Error</h6>
+            <span id="vid_error" class="center"></span>
+
+            <br>
+            <br>
+            <br>
+        </section>
+    </div>
+
+    <!-- FOOTER  -->
+  
+    <script src="{% static 'js/jquery-1.js'%}"></script>
+    <script src="{% static 'js/html5-qrcode.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>
+
