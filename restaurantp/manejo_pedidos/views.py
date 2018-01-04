@@ -12,7 +12,7 @@ def index(request):
 
 def escaneo(request):
 	titulo ={'restaurante':"La Sazon de la Abuela"}
-	return render(request, 'escaneo.html',titulo,
+	return render(request, 'escaneo2.html',titulo,
 		context_instance = RequestContext(request))
 
 def prueba(request):
