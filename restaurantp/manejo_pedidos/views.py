@@ -8,16 +8,14 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the Manejo pedidos  index.")
+    return render(request, 'index.html',
+		context_instance = RequestContext(request))
 
 def escaneo(request):
 	titulo ={'restaurante':"La Sazon de la Abuela"}
-	return render(request, 'escaneo2.html',titulo,
+	return render(request, 'escaneo.html',titulo,
 		context_instance = RequestContext(request))
 
-def prueba(request):
-	titulo ={'restaurante':"Prueba escaneo"}
-	return render(request, 'test.html',titulo,
-		context_instance = RequestContext(request))
+
 
 	
