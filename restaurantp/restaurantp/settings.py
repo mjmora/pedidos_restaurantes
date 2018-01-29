@@ -25,11 +25,9 @@ SECRET_KEY = '^@pq@%4m6+^91#p=ig)bw=iatt$ie&92+6k7gttty6n#%2hb#w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['*']
-=======
+
 ALLOWED_HOSTS = ['*',]
->>>>>>> 1994c9fe637c8a5c800f743535ca0a03c1960861
+
 
 
 # Application definition
@@ -81,8 +79,14 @@ WSGI_APPLICATION = 'restaurantp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pedidosr',
+        'USER': 'mjmora',
+        'PASSWORD': 'majomora5',
+        'HOST''HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

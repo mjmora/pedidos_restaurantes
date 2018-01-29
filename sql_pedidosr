@@ -1,0 +1,72 @@
+CREATE TABLE persona(
+id_persona SERIAL NOT NULL,
+nombre_persona text NOT NULL,
+identificacion text NOT NULL,
+telefono text,
+direccion text,
+mail text,
+CONSTRAINT persona_pk PRIMARY KEY(id_persona),
+CONSTRAINT persona_id_unk UNIQUE(identificacion)
+);
+
+CREATE TABLE personal(
+id_personal SERIAL NOT NULL,
+id_persona integer NOT NULL,
+usuario text,
+contrasenia text,
+rol char,
+CONSTRAINT personal_pk PRIMARY KEY(id_personal),
+CONSTRAINT personal_persona_fk FOREIGN KEY(id_persona) REFERENCES persona(id_persona)
+);
+
+CREATE TABLE cliente(
+id_cliente SERIAL NOT NULL,
+id_persona integer NOT NULL,
+tipo_cliente text,
+CONSTRAINT cliente_pk PRIMARY KEY(id_cliente),
+CONSTRAINT personal_persona_fk FOREIGN KEY(id_persona) REFERENCES persona(id_persona)
+);
+
+CREATE TABLE menu(
+id_menu SERIAL NOT NULL,
+id_plato text,
+descripcion text,
+precio decimal(3,3),
+CONSTRAINT menu_pk PRIMARY KEY(id_menu)
+);
+
+CREATE TABLE mesa(
+id_mesa SERIAL NOT NULL,
+numero integer,
+capacidad integer,
+CONSTRAINT mesa_pk PRIMARY KEY(id_mesa)
+);
+
+CREATE TABLE pedido(
+id_pedido SERIAL NOT NULL,
+id_cliente integer,
+mesa integer,
+valor_total decimal(3,3),
+subtotal decimal(3,3),
+CONSTRAINT pedido_pk PRIMARY KEY(id_pedido),
+CONSTRAINT pedido_mesa_fk FOREIGN KEY(mesa) REFERENCES mesa(id_mesa),
+CONSTRAINT pedido_cliente_fk FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente)
+);
+
+
+
+CREATE TABLE consumo(
+id_consumo SERIAL NOT NULL,
+id_pedido integer,
+plato integer,
+cantidad integer,
+CONSTRAINT consumo_pk PRIMARY KEY(id_consumo),
+CONSTRAINT consumo_menu_fk FOREIGN KEY(plato) REFERENCES menu(id_menu),
+CONSTRAINT consumo_pedido_fk FOREIGN KEY(id_pedido) REFERENCES pedido(id_pedido)
+);
+
+
+
+
+
+

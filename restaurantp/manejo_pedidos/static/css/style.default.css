@@ -334,6 +334,30 @@ textarea {
   left: 1px;
   top: 1px;
 }
+
+#envio{
+  margin-left: 10px;
+  font-size: 1em;
+  width: -webkit-calc(100% - 2px);
+  height: -webkit-calc(100% - 2px);
+  border: 1px solid #fff;
+  position: relative;
+  display: block;
+  left: 1px;
+  top: 1px;
+  color: #fff;
+  background: #7fb401;
+  line-height: 40px !important;
+  outline-width: 10px;
+  padding: 20 20 5 20px !important;
+  content: '';
+}
+#envio:hover, #envio:focus{
+  background: #111111;
+  border: none;
+  color: #fff;
+}
+
 .btn-unique:hover,
 .btn-unique:focus {
   background: #111111;
