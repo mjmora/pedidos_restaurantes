@@ -19,8 +19,8 @@
                             <h2>Ingresa tus datos personales</h2>
                             <h3>Book your table now</h3>
 
-                            <form method="POST" class="post-form" id="booking-form">{% csrf_token %}
-                                {{ form.as_p }}
+                            <form method="POST" action ="manejo_pedidos/menu" class="post-form" id="booking-form">{% csrf_token %}
+                            
                                 <div class="row">
                                     <div class="col-md-10 col-md-push-1">
                                         <div class="row">
@@ -46,8 +46,10 @@
                                                 <textarea id="request" name="request" required></textarea>
                                             </label>
                                             <div class="col-sm-12">
-                                                <button type="submit"><a id="envio" href="/manejo_pedidos/menu">REALIZAR PEDIDO</a></button>
-                                                <!--<button type="submit" id="enviar" class="btn-unique">
+                                                <button type="submit" id="enviar" class="btn-unique">
+                                                Realizar Pedido</button>
+                                                <!--<a id="envio" href="/manejo_pedidos/menu">REALIZAR PEDIDO</a>
+                                                <button type="submit" id="enviar" class="btn-unique">
                                                 Realizar Pedido</button>-->
                                             </div>
                                         </div>
@@ -58,7 +60,7 @@
                     </div>
                 </div>
             </section>
-            <!--Fin Registro-->
+            <!--Fin Registro
 
 
             <script type="text/javascript">
@@ -88,5 +90,6 @@
 
             });
             </script>
+            -->
 
 {% endblock %}

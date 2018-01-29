@@ -6,7 +6,7 @@ from django.template import RequestContext
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
-from .forms import PostForm
+#from .forms import PostForm
 
 from manejo_pedidos.models import *
 
@@ -22,8 +22,8 @@ def escaneo(request):
 		context_instance = RequestContext(request))
 
 def menu(request):
-	#nombre=request.GET.get['nombre']
-	#print nombre
+	nombre=request.POST.get('name')
+	print nombre
 	return render(request, 'menu.html',
 		context_instance = RequestContext(request))
 
@@ -42,14 +42,14 @@ def pedido_cliente(request):
         return render(request, 'index.html',req,
 		context_instance = RequestContext(request))
 
-def post_new(request):
-	from = PostForm()
-	if request.methos == "POST":
-		form=PostForm(request.POST)
-		if form.is_valid():
-			post = form.save(commit=False)
-	else:
-		form=PostForm()
-	return render(request,'',{'form':form})
+#def post_new(request):
+	#from = PostForm()
+#	if request.methos == "POST":
+#		form=PostForm(request.POST)
+#		if form.is_valid():
+#			post = form.save(commit=False)
+#	else:
+#		form=PostForm()
+#	return render(request,'',{'form':form})
 
 	
