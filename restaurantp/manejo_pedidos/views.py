@@ -34,7 +34,10 @@ def menu(request):
 	return render(request, 'menu.html',
 		context_instance = RequestContext(request))
 
-
+def cocina(request):
+	
+	return render(request, 'cocina.html',
+		context_instance = RequestContext(request))
 
 
 def reg_cliente(request):
