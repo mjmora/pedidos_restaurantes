@@ -1,14 +1,22 @@
-from django.shortcuts import render
+from manejo_pedidos.models import *
 
+from django.shortcuts import render
+from django.forms import *
+from forms import *
 # Create your views here.
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
+<<<<<<< HEAD
 #from .forms import PostForm
 
 from manejo_pedidos.models import *
+=======
+from django.utils import timezone
+from django.shortcuts import redirect
+>>>>>>> a7a70c0bc58437b9bfa2bf9fcf026323cb02236e
 
 def index(request):
 	#nuevo = Mesa(numero=1,capacidad=4)
@@ -27,21 +35,8 @@ def menu(request):
 	return render(request, 'menu.html',
 		context_instance = RequestContext(request))
 
-	
-@csrf_exempt#decorador para que me permitta ingresar por un ajax y no por el navegador
-def pedido_cliente(request):
-    """
-    """
-    req = {}#crea un diccionario vacio
-    if request.is_ajax() == True:
-        nombre = request.POST['nombre']#hace referencia al valor enviado enel tmplate paralelo_buscador
-        
-        #obtiene los estudiantes cuyo id_paraleto es igual al id obtenido del templates donde su apellido sea igual a la letra
-       
-        req['mensaje'] = 'Correcto .... cargando datos '#para el diccionario crea una llave 
-        return render(request, 'index.html',req,
-		context_instance = RequestContext(request))
 
+<<<<<<< HEAD
 #def post_new(request):
 	#from = PostForm()
 #	if request.methos == "POST":
@@ -51,5 +46,33 @@ def pedido_cliente(request):
 #	else:
 #		form=PostForm()
 #	return render(request,'',{'form':form})
+=======
 
-	
+def reg_cliente(request):
+	if request.method == "POST":
+		form = PersonaForm(request.POST)
+		if form.is_valid():
+			post = form.save(commit=False)
+			post.author = request.user
+			post.published_date = timezone.now()
+			post.save()
+	        return redirect('index')
+	else:
+		form = PersonaForm()
+	return render(request, 'cliente.html', {'form': form})
+
+
+
+
+>>>>>>> a7a70c0bc58437b9bfa2bf9fcf026323cb02236e
+
+# def pedido_cliente(request):
+#     """
+#     """
+#     req = {}#crea un diccionario vacio
+#     if request.is_ajax() == True:
+#         nombre = request.POST['nombre']#hace referencia al valor enviado enel tmplate paralelo_buscador
+#
+#         req['mensaje'] = 'Correcto .... cargando datos '
+#         return render(request, 'cliente.html',req,
+# 		context_instance = RequestContext(request))

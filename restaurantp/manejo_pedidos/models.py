@@ -93,3 +93,10 @@ class Personal(models.Model):
         managed = False
         db_table = 'personal'
 
+class Post(models.Model):
+    id_personal = models.AutoField(primary_key=True)
+    title= models.TextField(blank=True, null=True)
+    text=models.TextField(blank=True, null=True)
+    class Meta:
+        managed = False
+        db_table = 'personal'
