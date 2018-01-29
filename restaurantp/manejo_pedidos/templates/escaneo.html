@@ -1,41 +1,65 @@
 {%load static%}
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="HTML5 QR code Reader : A cross platform HTML5 QR code reader.">
+<html>
 
-    
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css'%}">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="description" content="HTML5 QR code Reader : A cross platform HTML5 QR code reader.">
 
-    <title>Lector QR {% block titulo %}{% endblock %}</title>
-  </head>
 
-  <body>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css'%}">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-            <h1 id="project_title">{{restaurante}}</h1>
-          
-        </header>
-    </div>
+  <title>Lector QR {% block titulo %}{% endblock %}</title>
+  <script type="text/javascript">
+    document.getElementById("enviar").addEventListener("click", redireccionar);
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner center">
-       
 
-          <h3 class="center">Escanea el código de tu mesa</h3>
+    function redireccionar() {
+      console.log(document.getElementById('read').innerHTNL);
+      do {
+        console.log(document.getElementById('read').innerHTNL);
+        if (document.getElementById('read').innerHTNL  == '0.0.0.0:8000/cliente/') {
+          window.location.replace({% url 'cliente' %});
+          console.log(document.getElementById('read').innerHTNL);
+        }
 
-          <div class="center" id="reader" style="width:300px;height:250px;"><video id="html5_qrcode_video" width="300px" height="250px"></video><canvas id="qr-canvas" width="298px" height="248px" style="display:none;"></canvas></div>
+      } while (document.getElementById('read').innerHTNL == '');
 
-          <h6 class="center">Result</h6>
-          <span id="read" class="center"></span>
-          <br>
-<!--
+
+    }
+  </script>
+
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header_wrap" class="outer">
+    <header class="inner">
+      <h1 id="project_title">{{restaurante}}</h1>
+
+    </header>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner center">
+
+
+      <h3 class="center">Escanea el código de tu mesa</h3>
+
+      <div class="center" id="reader" style="width:300px;height:250px;"><video id="html5_qrcode_video" width="300px" height="250px"></video><canvas id="qr-canvas" width="298px" height="248px" style="display:none;"></canvas></div>
+
+      <h6 id="a" class="center">Result</h6>
+
+      <span id="read" class="center"></span>
+
+      <br>
+      <!--
           <h6 class="center">Read Error</h6>
           <span class="center">Will constantly show a message, can be ignored</span>
           <span id="read_error" class="center"></span>
@@ -46,22 +70,27 @@
 
           <br>
           <br>
-    -->      <br>
+    --><br>
 
-      </section></div>
+    </section>
+  </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        
-      </footer>
-    </div>
+  <!-- FOOTER  -->
+  <div id="footer_wrap" class="outer">
+    <footer class="inner">
+
+    </footer>
+  </div>
 
   <script src="{% static 'js/jquery-1.js'%}"></script>
   <script src="{% static 'js/html5-qrcode.js'%}"></script>
-  <script src="{% static 'js/main.js'%}"></script>    
+  <script src="{% static 'js/main.js'%}"></script>
 
-  
+
 
 </body>
+
+
+<button id="enviar"  name="button">Enviar</button>
+
 </html>

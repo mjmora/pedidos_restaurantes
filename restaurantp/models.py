@@ -11,6 +11,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from django.forms import ModelForm
+
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
@@ -86,7 +88,6 @@ class Cliente(models.Model):
     class Meta:
         managed = False
         db_table = 'cliente'
-
 
 class Consumo(models.Model):
     id_consumo = models.AutoField(primary_key=True)
@@ -187,6 +188,8 @@ class Persona(models.Model):
     class Meta:
         managed = False
         db_table = 'persona'
+
+
 
 
 class Personal(models.Model):
