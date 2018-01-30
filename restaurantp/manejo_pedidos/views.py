@@ -37,15 +37,6 @@ def menu(request):
 	print (cedula)
 	cliente=Persona(nombre_persona=nombre, identificacion=cedula ,telefono=telefono,direccion=direc,mail=mail)
 	cliente.save()
-	id_cl=Persona.objects.all()
-	for c in id_cl:
-		print(c.nombre_persona)
-		print(cedula)
-		print(c.identificacion)
-		if nombre==c.nombre_persona:
-			cd=c.id_persona
-			print(cd)
-	
 	client={'id':cedula,'mesa':1}
 	return render(request, 'menu.html',client,
 		context_instance = RequestContext(request))
@@ -57,13 +48,10 @@ def cocina(request):
 	for p in pedido:
 		platos=p.plato
 		cc.append([platos.nombre_pl,p.cantidad,p.id_consumo])
-
-
 	pedidos={'pedido':cc}
 	print(pedidos)
 	return render(request, 'cocina.html',pedidos,
 		context_instance = RequestContext(request))
-
 
 def reg_cliente(request):
 	if request.method == "POST":
@@ -82,10 +70,10 @@ def reg_cliente(request):
 
 def pedido(request):
 	mesa=request.POST.get('mesa')
-	id_cliente=request.POST.get('id')
+	id_cliente=request.POST.get('id_cliente')
 	valor_total=request.POST.get('total')
 	subtotal=request.POST.get('total')
-	pedido=Pedido(mesa=mesa, valor_total=valor_total ,subtotal=subtotal)
+	pedido=Pedido(id_persona=id_cliente ,mesa=mesa, valor_total=valor_total ,subtotal=subtotal)
 	pedido.save()
 	client={'valor_total':valor_total,'mesa':mesa}
 	return render(request, 'pedido_correcto.html',client,
