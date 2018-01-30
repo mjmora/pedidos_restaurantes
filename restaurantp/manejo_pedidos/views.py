@@ -31,16 +31,15 @@ def escaneo(request):
 def menu(request):
 	nombre=request.POST.get('name')
 	mail=request.POST.get('email')
-	cd=request.POST.get('cedula')
+	cedula=request.POST.get('cedula')
 	telefono=request.POST.get('numero')
 	direc=request.POST.get('direccion')
-	print (cd)
-	cliente=Persona(nombre_persona=nombre,identificacion=cd,telefono=telefono,direccion=direc,mail=mail)
+	print (cedula)
+	cliente=Persona(nombre_persona=nombre, identificacion=cedula ,telefono=telefono,direccion=direc,mail=mail)
 	cliente.save()
-	client={'id':cd,'mesa':1}
+	client={'id':cedula,'mesa':1}
 	return render(request, 'menu.html',client,
 		context_instance = RequestContext(request))
-
 
 def cocina(request):
 	pedido = Consumo.objects.filter(estado=false)
@@ -63,4 +62,13 @@ def reg_cliente(request):
 		form = PersonaForm()
 	return render(request, 'cliente.html', {'form': form})
 
-
+def pedido(request):
+	mesa=request.POST.get('mesa')
+	id_cliente=request.POST.get('id')
+	valor_total=request.POST.get('total')
+	subtotal=request.POST.get('total')
+	pedido=Pedido(mesa=mesa, valor_total=valor_total ,subtotal=subtotal)
+	pedido.save()
+	client={'valor_total':valor_total,'mesa':mesa}
+	return render(request, 'pedido_correcto.html',client,
+		context_instance = RequestContext(request))
