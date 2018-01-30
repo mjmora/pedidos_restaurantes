@@ -37,13 +37,14 @@ def menu(request):
 	print (cd)
 	cliente=Persona(nombre_persona=nombre,identificacion=cd,telefono=telefono,direccion=direc,mail=mail)
 	cliente.save()
+
 	client={'id':cd,'mesa':1}
 	return render(request, 'menu.html',client,
 		context_instance = RequestContext(request))
 
 
 def cocina(request):
-	pedido = Consumo.objects.filter(estado=false)
+	pedido = Consumo.objects.filter(estado=False)
 	return render(request, 'cocina.html',
 		context_instance = RequestContext(request))
 

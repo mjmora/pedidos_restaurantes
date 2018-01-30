@@ -29,7 +29,8 @@ CONSTRAINT personal_persona_fk FOREIGN KEY(id_persona) REFERENCES persona(id_per
 
 CREATE TABLE menu(
 id_menu SERIAL NOT NULL,
-id_plato text,
+nombre_plato text NOT NULL,
+id_plato text NOT NULL,
 descripcion text,
 precio decimal(3,3),
 CONSTRAINT menu_pk PRIMARY KEY(id_menu)
@@ -60,10 +61,14 @@ id_consumo SERIAL NOT NULL,
 id_pedido integer,
 plato integer,
 cantidad integer,
+estado bool,
 CONSTRAINT consumo_pk PRIMARY KEY(id_consumo),
 CONSTRAINT consumo_menu_fk FOREIGN KEY(plato) REFERENCES menu(id_menu),
 CONSTRAINT consumo_pedido_fk FOREIGN KEY(id_pedido) REFERENCES pedido(id_pedido)
 );
+
+
+
 
 
 

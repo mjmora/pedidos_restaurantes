@@ -42,6 +42,7 @@ class Menu(models.Model):
     id_plato = models.TextField(blank=True, null=True)
     descripcion = models.TextField(blank=True, null=True)
     precio = models.DecimalField(max_digits=3, decimal_places=3, blank=True, null=True)
+    nombre_pl = models.TextField()
 
     class Meta:
         managed = False
