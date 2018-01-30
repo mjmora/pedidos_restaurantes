@@ -52,7 +52,16 @@ def menu(request):
 
 def cocina(request):
 	pedido = Consumo.objects.filter(estado=False)
-	return render(request, 'cocina.html',
+	platos=[]
+	cc=[]
+	for p in pedido:
+		platos=p.plato
+		cc.append([platos.nombre_pl,p.cantidad,p.id_consumo])
+
+
+	pedidos={'pedido':cc}
+	print(pedidos)
+	return render(request, 'cocina.html',pedidos,
 		context_instance = RequestContext(request))
 
 
