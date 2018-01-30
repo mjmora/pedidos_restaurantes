@@ -11,8 +11,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from django.forms import ModelForm
-
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
@@ -89,6 +87,7 @@ class Cliente(models.Model):
         managed = False
         db_table = 'cliente'
 
+
 class Consumo(models.Model):
     id_consumo = models.AutoField(primary_key=True)
     id_pedido = models.ForeignKey('Pedido', db_column='id_pedido', blank=True, null=True)
@@ -156,6 +155,7 @@ class Menu(models.Model):
         managed = False
         db_table = 'menu'
 
+
 class Mesa(models.Model):
     id_mesa = models.AutoField(primary_key=True)
     numero = models.IntegerField(blank=True, null=True)
@@ -168,7 +168,7 @@ class Mesa(models.Model):
 
 class Pedido(models.Model):
     id_pedido = models.AutoField(primary_key=True)
-    id_cliente = models.ForeignKey(Cliente, db_column='id_cliente', blank=True, null=True)
+    id_persona = models.ForeignKey('Persona', db_column='id_persona', blank=True, null=True)
     mesa = models.ForeignKey(Mesa, db_column='mesa', blank=True, null=True)
     valor_total = models.DecimalField(max_digits=3, decimal_places=3, blank=True, null=True)
     subtotal = models.DecimalField(max_digits=3, decimal_places=3, blank=True, null=True)
@@ -181,7 +181,7 @@ class Pedido(models.Model):
 class Persona(models.Model):
     id_persona = models.AutoField(primary_key=True)
     nombre_persona = models.TextField()
-    identificacion = models.TextField(unique=True)
+    identificacion = models.BigIntegerField(unique=True)
     telefono = models.TextField(blank=True, null=True)
     direccion = models.TextField(blank=True, null=True)
     mail = models.TextField(blank=True, null=True)
@@ -191,11 +191,9 @@ class Persona(models.Model):
         db_table = 'persona'
 
 
-
-
 class Personal(models.Model):
     id_personal = models.AutoField(primary_key=True)
-    id_persona = models.ForeignKey(Persona, db_column='id_persona')
+    id_persona = models.IntegerField()
     usuario = models.TextField(blank=True, null=True)
     contrasenia = models.TextField(blank=True, null=True)
     rol = models.CharField(max_length=1, blank=True, null=True)

@@ -37,12 +37,16 @@ def menu(request):
 	print (cedula)
 	cliente=Persona(nombre_persona=nombre, identificacion=cedula ,telefono=telefono,direccion=direc,mail=mail)
 	cliente.save()
-<<<<<<< HEAD
-
-	client={'id':cd,'mesa':1}
-=======
+	id_cl=Persona.objects.all()
+	for c in id_cl:
+		print(c.nombre_persona)
+		print(cedula)
+		print(c.identificacion)
+		if nombre==c.nombre_persona:
+			cd=c.id_persona
+			print(cd)
+	
 	client={'id':cedula,'mesa':1}
->>>>>>> f34968daaa5a59fa931ec2eaee066abe54789885
 	return render(request, 'menu.html',client,
 		context_instance = RequestContext(request))
 

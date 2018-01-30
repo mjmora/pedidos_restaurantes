@@ -1,6 +1,3 @@
-
-
-# Create your models here.
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
@@ -13,6 +10,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+
 
 
 class Cliente(models.Model):
@@ -35,6 +33,7 @@ class Consumo(models.Model):
     class Meta:
         managed = False
         db_table = 'consumo'
+
 
 
 class Menu(models.Model):
@@ -61,7 +60,7 @@ class Mesa(models.Model):
 
 class Pedido(models.Model):
     id_pedido = models.AutoField(primary_key=True)
-    id_cliente = models.ForeignKey(Cliente, db_column='id_cliente', blank=True, null=True)
+    id_persona = models.ForeignKey('Persona', db_column='id_persona', blank=True, null=True)
     mesa = models.ForeignKey(Mesa, db_column='mesa', blank=True, null=True)
     valor_total = models.DecimalField(max_digits=3, decimal_places=3, blank=True, null=True)
     subtotal = models.DecimalField(max_digits=3, decimal_places=3, blank=True, null=True)
@@ -74,7 +73,7 @@ class Pedido(models.Model):
 class Persona(models.Model):
     id_persona = models.AutoField(primary_key=True)
     nombre_persona = models.TextField()
-    identificacion = models.TextField(unique=True)
+    identificacion = models.BigIntegerField(unique=True)
     telefono = models.TextField(blank=True, null=True)
     direccion = models.TextField(blank=True, null=True)
     mail = models.TextField(blank=True, null=True)
@@ -86,19 +85,11 @@ class Persona(models.Model):
 
 class Personal(models.Model):
     id_personal = models.AutoField(primary_key=True)
-    id_persona = models.ForeignKey(Persona, db_column='id_persona')
+    id_persona = models.IntegerField()
     usuario = models.TextField(blank=True, null=True)
     contrasenia = models.TextField(blank=True, null=True)
     rol = models.CharField(max_length=1, blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'personal'
-
-class Post(models.Model):
-    id_personal = models.AutoField(primary_key=True)
-    title= models.TextField(blank=True, null=True)
-    text=models.TextField(blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'personal'

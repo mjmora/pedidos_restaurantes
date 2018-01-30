@@ -1,7 +1,7 @@
 CREATE TABLE persona(
 id_persona SERIAL NOT NULL,
 nombre_persona text NOT NULL,
-identificacion text NOT NULL,
+identificacion bigint NOT NULL,
 telefono text,
 direccion text,
 mail text,
@@ -45,13 +45,13 @@ CONSTRAINT mesa_pk PRIMARY KEY(id_mesa)
 
 CREATE TABLE pedido(
 id_pedido SERIAL NOT NULL,
-id_cliente integer,
+id_persona integer,
 mesa integer,
 valor_total decimal(3,3),
 subtotal decimal(3,3),
 CONSTRAINT pedido_pk PRIMARY KEY(id_pedido),
 CONSTRAINT pedido_mesa_fk FOREIGN KEY(mesa) REFERENCES mesa(id_mesa),
-CONSTRAINT pedido_cliente_fk FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente)
+CONSTRAINT pedido_cliente_fk FOREIGN KEY(id_persona) REFERENCES persona(id_persona)
 );
 
 
