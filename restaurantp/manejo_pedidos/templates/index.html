@@ -20,7 +20,7 @@
                             <h3>Book your table now</h3>
 
                             <form method="POST" action ="manejo_pedidos/menu" class="post-form" id="booking-form">{% csrf_token %}
-                            
+
                                 <div class="row">
                                     <div class="col-md-10 col-md-push-1">
                                         <div class="row">
@@ -31,7 +31,7 @@
                                                 <input name="email" type="email" id="email" required>
                                             </label>
                                             <label for="number" class="col-sm-6 unique">Cédula/ RUC
-                                                <input name="cedula" type="text" id="cedula" required>
+                                                <input name="cedula" type="number" id="cedula" required>
                                             </label>
                                             <!--<label for="people" class="col-sm-6 unique">How Many People
                                                 <input name="people" type="number" id="people" min="1" required>
@@ -43,7 +43,7 @@
                                                 <input name="numero" type="text" id="numero" required>
                                             </label>
                                             <label for="request" class="col-sm-12 unique">Dirección
-                                                <input name="direccion" type="text" id="direccion" required>
+                                                <textarea id="request" name="request" required></textarea>
                                             </label>
                                             <div class="col-sm-12">
                                                 <button type="submit" id="enviar" class="btn-unique">
@@ -64,26 +64,26 @@
 
 
             <script type="text/javascript">
-                jQuery(document).ready(function ($) { //cuando se rendetize todo 
+                jQuery(document).ready(function ($) { //cuando se rendetize todo
                 console.log('llegando');
                 $('#enviar').click(function(){//cuando se de un click al seleccionador del select de arriba
                             $nombre = $('#name').val();
                             $id = $('#cedula').val();
                             $telf = $('#telefono').val();
-                            console.log($nombre);//imprimo 
-                            $.ajax({//utlizo la funcion ajax de jquery 
-                                //method:"POST",// con el metodo post le envio a la vista 
+                            console.log($nombre);//imprimo
+                            $.ajax({//utlizo la funcion ajax de jquery
+                                //method:"POST",// con el metodo post le envio a la vista
                                 url: 'manejo_pedidos/menu',//vista
                                 data: {//datos que se envian
                                     'nombre': $nombre,
                                 },
                                 type:'get',
                                 //beforeSend:function() {},
-                                
+
                                 success:function(data){//cuando todo es satisfactorio en el ajax, recibe la data del diccioinario req de la vista
                                     console.log('regresando del método');
                                     console.log(data.mensaje);
-                                    
+
                                 }
                             });
                         });
