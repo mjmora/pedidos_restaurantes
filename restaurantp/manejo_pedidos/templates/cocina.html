@@ -9,8 +9,8 @@
                         <h2>COCINA</h2>
                         <h3>Pedidos</h3>
                     </header>
-                    {%for p in pedido%}
-                        
+                    {%for p in pedidos%}
+                    <div class="container">
                     <div class="row" id="div{{p.2}}">
                         <div class="col-sm-4">
                             <div class="item">
@@ -22,7 +22,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                
+
                                 <div class="text">
                                     <h4>{{p.0}}</h4>
                                     <p class="after text-primary text-large">Cantidad: {{p.1}}</p>
@@ -32,15 +32,15 @@
                         </div>
                     </div>
                     {%endfor%}
-                    
+                  </div>
                 </div>
             </section>
-    
+
     <script type="text/javascript">
         document.ready(function (){
             $("#estado").click(function()
                 {
-                    
+
                 });
         }
     </script>

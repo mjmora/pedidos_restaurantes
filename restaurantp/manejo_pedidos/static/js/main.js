@@ -6,10 +6,10 @@ $(document).ready(function(){
 			var mesa=dt[1];
 			var direccion=dt[0];
 			console.log(mesa);
-			if(direccion == '0.0.0.0:8000/cliente'){
+			// if(direccion == '192.168.0.101:8000/scanqr'){
 				location.href='0.0.0.0:8000/cliente';
-				
-			}
+
+			// }
 
 		},
 		function(error){

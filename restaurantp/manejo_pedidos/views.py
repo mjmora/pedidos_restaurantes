@@ -48,7 +48,7 @@ def cocina(request):
 	for p in pedido:
 		platos=p.plato
 		cc.append([platos.nombre_pl,p.cantidad,p.id_consumo])
-	pedidos={'pedido':cc}
+	pedidos={'pedido':cc,'pedidos':pedido}
 	print(pedidos)
 	return render(request, 'cocina.html',pedidos,
 		context_instance = RequestContext(request))
@@ -73,8 +73,14 @@ def pedido(request):
 	id_cliente=request.POST.get('id_cliente')
 	valor_total=request.POST.get('total')
 	subtotal=request.POST.get('total')
+	id_pedido=1;
+	# plato=request.POST.get('plato')
+	# cantidad=request.get('cantidad')
+	# estado=False
 	pedido=Pedido(id_persona=id_cliente ,mesa=mesa, valor_total=valor_total ,subtotal=subtotal)
+	# consumo=Consumo(id_pedido=id_pedido,plato=plato,cantidad=cantidad,estado=estado)
 	pedido.save()
+	# consumo.save();
 	client={'valor_total':valor_total,'mesa':mesa}
 	return render(request, 'pedido_correcto.html',client,
 		context_instance = RequestContext(request))

@@ -6,11 +6,11 @@
 <section id="menu" class="menu">
   <div class="container">
     <header class="text-center">
-      <h2>Our food menu</h2>
-      <h3>Our most popular menu</h3>
+      <h2>Menu</h2>
+      <h3>Selecciona tus platillo</h3>
     </header>
-    <h2 id ="id_cli">{{id}}</h2>
-    <h2 id="mesa">{{mesa}}</h2>
+    <h4 id ="id_cli">Cliente: {{id}}</h2>
+    <h4 id="mesa">N° Mesa: {{mesa}}</h2>
     <div class="menu">
       <form method="POST" action="completado" class="post-form" id="booking-form">{% csrf_token %}
         <!-- Tabs Navigatin -->
@@ -28,7 +28,7 @@
                     <p>Mushroom / Veggie / White Sources</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">4$</strong>
                     <input type="number" id="1" class="text-muted" type="number" name="cantidad" min="0" max="20">
                   </div>
                 </div>
@@ -41,7 +41,7 @@
                     <p>Lemon / Garlic / Beans</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">5$</strong>
                     <input type="number" id="2" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -55,7 +55,7 @@
                     <p>Lamb / Wine / Butter</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">3$</strong>
                     <input type="number" id="3" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -69,7 +69,7 @@
                     <p>Pepper / Chicken / Honey</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">2$</strong>
                     <input type="number" id="4" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -83,7 +83,7 @@
                     <p>Oysters / Veggie / Ginger</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">3$</strong>
                     <input type="number" id="5" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -97,7 +97,7 @@
                     <p>Mushroom / Veggie / White Sources</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">4$</strong>
                     <input type="number" id="6" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -111,7 +111,7 @@
                     <p>Lemon / Garlic / Beans</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">5$</strong>
                     <input type="number" id="7" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -125,7 +125,7 @@
                     <p>Mushroom / Veggie / White Sources</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">5$</strong>
                     <input type="number" id="8" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -139,7 +139,7 @@
                     <p>Lamb / Wine / Butter</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">6$</strong>
                     <input type="number" id="9" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
 
@@ -154,7 +154,7 @@
                     <p>Pepper / Chicken / Honey</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">8$</strong>
                     <input type="number" id="10" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -168,7 +168,7 @@
                     <p>Oysters / Veggie / Ginger</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">4$</strong>
                     <input type="number" id="11" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -182,7 +182,7 @@
                     <p>Mushroom / Veggie / White Sources</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">4$</strong>
                     <input type="number" id="12" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -195,7 +195,7 @@
                     <p>Mushroom / Veggie / White Sources</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
+                    <strong class="text-large text-primary">3$</strong>
                     <input type="number" id="13" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
@@ -204,12 +204,12 @@
               <div class="col-sm-6">
                 <div class="menu-item recommended has-border clearfix">
                   <div class="item-details pull-left">
-                    <h5>Wild Mushroom Bucatini with Kale</h5>
+                    <h5 id="plato">Wild Mushroom Bucatini with Kale</h5>
                     <p>Mushroom / Veggie / White Sources</p>
                   </div>
                   <div class="item-price pull-right">
-                    <strong class="text-large text-primary">20$</strong>
-                    <input type="number" id="14" class="text-muted" type="number" name="cantidad" min="0" max="20">
+                    <strong class="text-large text-primary">8$</strong>
+                    <input type="number" id="cantidad" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                   </div>
                 </div>
