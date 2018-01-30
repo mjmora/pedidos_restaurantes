@@ -3,16 +3,17 @@
 
 {% block contenido %}
 <!-- Menu Section -->
-
-    <section id="menu" class="menu">
-       <div class="container">
-         <header class="text-center">
-            <h2>MENU</h2>
-            <h3>Mesa: {{mesa}}</h3>
-            <h3>Id: {{id}}</h3>
-          </header>
-
-
+<section id="menu" class="menu">
+  <div class="container">
+    <header class="text-center">
+      <h2>Our food menu</h2>
+      <h3>Our most popular menu</h3>
+    </header>
+    <h2 id ="id_cli">{{id}}</h2>
+    <h2 id="mesa">{{mesa}}</h2>
+    <div class="menu">
+      <form method="POST" action="completado" class="post-form" id="booking-form">{% csrf_token %}
+        <!-- Tabs Navigatin -->
         <!-- Tab panes -->
         <div class="tab-content">
 
@@ -216,7 +217,7 @@
             </div>
           </div>
           <!-- End Breakfast Panel-->
-          <button id ="button" href="manejo_pedidos/completado" type="submit" onclick="sumar()" class="btn-unique">Enviar</button>
+          <button id ="button" type="submit" onclick="sumar()" class="btn-unique">Enviar</button>
         </div>
       </form>
     </div>
