@@ -30,12 +30,20 @@ def escaneo(request):
 
 def menu(request):
 	nombre=request.POST.get('name')
-	print nombre
-	return render(request, 'menu.html',
+	mail=request.POST.get('email')
+	cd=request.POST.get('cedula')
+	telefono=request.POST.get('numero')
+	direc=request.POST.get('direccion')
+	print (cd)
+	cliente=Persona(nombre_persona=nombre,identificacion=cd,telefono=telefono,direccion=direc,mail=mail)
+	cliente.save()
+	client={'id':cd,'mesa':1}
+	return render(request, 'menu.html',client,
 		context_instance = RequestContext(request))
 
+
 def cocina(request):
-	
+	pedido = Consumo.objects.filter(estado=false)
 	return render(request, 'cocina.html',
 		context_instance = RequestContext(request))
 
@@ -43,11 +51,13 @@ def cocina(request):
 def reg_cliente(request):
 	if request.method == "POST":
 		form = PersonaForm(request.POST)
+		print()
 		if form.is_valid():
 			post = form.save(commit=False)
 			post.author = request.user
 			post.published_date = timezone.now()
 			post.save()
+			print(post)
 	        return redirect('index')
 	else:
 		form = PersonaForm()

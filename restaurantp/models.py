@@ -94,6 +94,7 @@ class Consumo(models.Model):
     id_pedido = models.ForeignKey('Pedido', db_column='id_pedido', blank=True, null=True)
     plato = models.ForeignKey('Menu', db_column='plato', blank=True, null=True)
     cantidad = models.IntegerField(blank=True, null=True)
+    estado = models.NullBooleanField()
 
     class Meta:
         managed = False
