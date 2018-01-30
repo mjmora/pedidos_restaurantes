@@ -42,10 +42,16 @@ def menu(request):
 		context_instance = RequestContext(request))
 
 def cocina(request):
-	pedido = Consumo.objects.filter(estado=false)
-	return render(request, 'cocina.html',
+	pedido = Consumo.objects.filter(estado=False)
+	platos=[]
+	cc=[]
+	for p in pedido:
+		platos=p.plato
+		cc.append([platos.nombre_pl,p.cantidad,p.id_consumo])
+	pedidos={'pedido':cc}
+	print(pedidos)
+	return render(request, 'cocina.html',pedidos,
 		context_instance = RequestContext(request))
-
 
 def reg_cliente(request):
 	if request.method == "POST":

@@ -9,67 +9,42 @@
                         <h2>COCINA</h2>
                         <h3>Pedidos</h3>
                     </header>
-
-                    <div class="row">
+                    {%for p in pedido%}
+                        
+                    <div class="row" id="div{{p.2}}">
                         <div class="col-sm-4">
                             <div class="item">
                                 <div class="discount">
                                     <div id="radio">
                                       <form class="form">
-                                        <input type="radio" name="pais" value="ecuador" id="ec">
-                                        <label for="ec" >Listo </label>
+                                        <input type="checkbox" name="estado" value="listo" id="estado{{p.2}}">
+                                        <label for="estado" >Listo </label>
                                         </form>
                                     </div>
-                                    <!--<span>40% <br> Off</span>-->
                                 </div>
-                                <div class="profile">
-                                    <img src="img/dish-d.png" alt="dish name" class="img-responsive">
-                                </div>
+                                
                                 <div class="text">
-                                    <h4>Dish Name</h4>
-                                    <p class="after text-primary text-large">30.00$</p>
-                                    <p class="before text-muted text-large">50.00$</p>
+                                    <h4>{{p.0}}</h4>
+                                    <p class="after text-primary text-large">Cantidad: {{p.1}}</p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="item">
-                                <div class="discount">
-                                    <input type="radio" name="pais" value="ecuador" id="ec">
-                                        <label for="ec" >Listo </label>
-                                </div>
-                                <div class="profile">
-                                    
-                                </div>
-                                <div class="text">
-                                    <h4>Dish Name</h4>
-                                    <p class="after text-primary text-large">30.00$</p>
-                                    <p class="before text-muted text-large">50.00$</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="item">
-                                <div class="discount">
-                                    <input type="radio" name="pais" value="ecuador" id="ec">
-                                    <label for="ec" >Listo </label>
-                                </div>
-                                <div class="profile">
-                                    <img src="img/dish-d.png" alt="dish name" class="img-responsive">
-                                </div>
-                                <div class="text">
-                                    <h4>Dish Name</h4>
-                                    <p class="after text-primary">30.00$</p>
-                                    <p class="before text-muted">50.00$</p>
-                                </div>
+                                <p>-------------------------</p>
                             </div>
                         </div>
                     </div>
+                    {%endfor%}
+                    
                 </div>
             </section>
-            <!-- End Offers Section -->
+    
+    <script type="text/javascript">
+        document.ready(function (){
+            $("#estado").click(function()
+                {
+                    
+                });
+        }
+    </script>
+
 
 
 {%endblock%}
