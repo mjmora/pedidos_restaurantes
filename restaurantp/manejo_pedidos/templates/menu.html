@@ -1,6 +1,6 @@
 {% extends "master.html" %} <!-- hereda -->
 
-{% block contenido %} 
+{% block contenido %}
 <!-- Menu Section -->
             <section id="menu" class="menu">
                 <div class="container">
@@ -20,148 +20,169 @@
                                 <div class="row">
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item recommended has-border clearfix">
+                                        <div id ="opcion1" class="menu-item recommended has-border clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Wild Mushroom Bucatini with Kale</h5>
                                                 <p>Mushroom / Veggie / White Sources</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
-                                                <input type="number" name="cantidad" min="0">
+                                                <input type="number" id="1" class="text-muted" type="number" name="cantidad" min="0" max="20">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item recommended has-border clearfix">
+                                        <div id ="opcion2" class="menu-item recommended has-border clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Lemon and Garlic Green Beans</h5>
                                                 <p>Lemon / Garlic / Beans</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
-                                            <div class="item-details pull-left">
-                                                <h5>LambBeef Kofka Skewers with Tzatziki</h5>
-                                                <p>Lamb / Wine / Butter</p>
-                                            </div>
-                                            <div class="item-price pull-right">
-                                                <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="2" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
+                                        <div id ="opcion3"class="menu-item clearfix">
+                                            <div class="item-details pull-left">
+                                                <h5>LambBeef Kofka Skewers with Tzatziki</h5>
+                                                <p>Lamb / Wine / Butter</p>
+                                            </div>
+                                            <div class="item-price pull-right">
+                                                <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="3" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item -->
+                                    <div class="col-sm-6">
+                                        <div id ="opcion4"class="menu-item clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Meatloaf with Black Pepper-Honey BBQ</h5>
                                                 <p>Pepper / Chicken / Honey</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="4" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
+                                        <div id ="opcion5" class="menu-item clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Imported Oysters Grill (5 Pieces)</h5>
                                                 <p>Oysters / Veggie / Ginger</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="5" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
+                                        <div id ="opcion6" class="menu-item clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Wild Mushroom Bucatini with Kale</h5>
                                                 <p>Mushroom / Veggie / White Sources</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="6" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item recommended has-border clearfix">
+                                        <div id ="opcion7" class="menu-item recommended has-border clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Lemon and Garlic Green Beans</h5>
                                                 <p>Lemon / Garlic / Beans</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
-                                            <div class="item-details pull-left">
-                                                <h5>Wild Mushroom Bucatini with Kale</h5>
-                                                <p>Mushroom / Veggie / White Sources</p>
-                                            </div>
-                                            <div class="item-price pull-right">
-                                                <strong class="text-large text-primary">20$</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
-                                            <div class="item-details pull-left">
-                                                <h5>LambBeef Kofka Skewers with Tzatziki</h5>
-                                                <p>Lamb / Wine / Butter</p>
-                                            </div>
-                                            <div class="item-price pull-right">
-                                                <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="7" class="text-muted" type="number" name="cantidad" min="0" max="20">
 
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
+                                        <div id ="opcion8"class="menu-item clearfix">
+                                            <div class="item-details pull-left">
+                                                <h5>Wild Mushroom Bucatini with Kale</h5>
+                                                <p>Mushroom / Veggie / White Sources</p>
+                                            </div>
+                                            <div class="item-price pull-right">
+                                                <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="8" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item -->
+                                    <div class="col-sm-6">
+                                        <div id ="opcion9" class="menu-item clearfix">
+                                            <div class="item-details pull-left">
+                                                <h5>LambBeef Kofka Skewers with Tzatziki</h5>
+                                                <p>Lamb / Wine / Butter</p>
+                                            </div>
+                                            <div class="item-price pull-right">
+                                                <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="9" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- item -->
+                                    <div class="col-sm-6">
+                                        <div id ="opcion10" class="menu-item clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Meatloaf with Black Pepper-Honey BBQ</h5>
                                                 <p>Pepper / Chicken / Honey</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="10" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
+                                        <div id ="opcion11" class="menu-item clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Imported Oysters Grill (5 Pieces)</h5>
                                                 <p>Oysters / Veggie / Ginger</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="11" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
                                     <!-- item -->
                                     <div class="col-sm-6">
-                                        <div class="menu-item clearfix">
+                                        <div id ="opcion12" class="menu-item clearfix">
                                             <div class="item-details pull-left">
                                                 <h5>Wild Mushroom Bucatini with Kale</h5>
                                                 <p>Mushroom / Veggie / White Sources</p>
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="12" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
@@ -173,6 +194,8 @@
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="13" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
@@ -184,6 +207,8 @@
                                             </div>
                                             <div class="item-price pull-right">
                                                 <strong class="text-large text-primary">20$</strong>
+                                                <input type="number" id="14" class="text-muted" type="number" name="cantidad" min="0" max="20">
+
                                             </div>
                                         </div>
                                     </div>
@@ -192,8 +217,103 @@
                         </div>
                     </div>
                 </div>
+                <button type="submit" onclick="sumar()" name="sub">Enviar</button>
             </section>
             <!-- End Menu Section -->
+            <script type="text/javascript">
+            var suma = 0
+            function sumar(){
+              if( $('#1').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#1').val()* 5);
+                console.log(suma);
+              }
+              if( $('#2').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#2').val()* 5);
+                console.log(suma);
+              }
+              if( $('#3').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#3').val()* 3);
+                console.log(suma);
+              }
+              if( $('#4').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#4').val()* 5);
+                console.log(suma);
+              }
+              if( $('#5').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#5').val()* 4);
+                console.log(suma);
+              }
+              if( $('#6').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#6').val()* 6);
+                console.log(suma);
+              }
+              if( $('#7').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#7').val()* 4);
+                console.log(suma);
+              }
+              if( $('#8').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#8').val()* 5);
+                console.log(suma);
+              }
+              if( $('#9').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#9').val()* 6);
+                console.log(suma);
+              }
+              if( $('#10').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#10').val()* 7);
+                console.log(suma);
+              }
+              if( $('#11').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#11').val()* 3);
+                console.log(suma);
+              }
+              if( $('#12').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#12').val()* 5);
+                console.log(suma);
+              }
+              if( $('#13').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#13').val()* 1);
+                console.log(suma);
+              }
+              if( $('#14').val()===''){
+                console.log("estavacio");
+              }else{
+                suma= suma + ($('#14').val()* 5);
+                console.log(suma);
+              }
+
+
+
+            }
+
+            </script>
+
 
 
 {% endblock %}
